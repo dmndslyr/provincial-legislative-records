@@ -15,7 +15,11 @@
         {{ config('app.name', 'Provincial Legislative Records System') }}
     </title>
 
+    <link rel="icon" type="image/png"
+      href="https://commons.wikimedia.org/wiki/Special:FilePath/Ph_seal_la_union.png">
+      
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
 </head>
 
 <body class="antialiased">
