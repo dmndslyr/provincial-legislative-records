@@ -1,0 +1,964 @@
+
+/* ==================================================
+   PROVINCIAL LEGISLATIVE RECORDS SYSTEM
+   Global Stylesheet
+   Typography: Montserrat
+   Colors: Deep Blue, Royal Blue, Crimson Red
+================================================== */
+
+
+/* ==================================================
+   1. FONT IMPORT
+================================================== */
+
+@import url('https://fonts.bunny.net/css?family=montserrat:400,500,600,700,800,900');
+
+
+/* ==================================================
+   2. TAILWIND
+================================================== */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ==================================================
+   3. COLOR PALETTE
+================================================== */
+
+:root {
+    /* Primary Blue */
+    --navy: #102B50;
+    --navy-dark: #0A1D38;
+    --navy-light: #1B3D69;
+
+    /* Secondary Blue */
+    --blue: #2459A6;
+    --blue-hover: #194A91;
+    --blue-light: #EAF1FA;
+    --blue-border: #C9D8EC;
+
+    /* Red Accent */
+    --red: #B42332;
+    --red-dark: #921C29;
+    --red-light: #FCEAEC;
+    --red-border: #EBC5CA;
+
+    /* Neutral Colors */
+    --white: #FFFFFF;
+    --background: #F4F6F9;
+    --surface: #FFFFFF;
+    --surface-alt: #F8F9FB;
+
+    --gray-50: #F8FAFC;
+    --gray-100: #F1F3F6;
+    --gray-200: #E2E6EC;
+    --gray-300: #D0D5DD;
+    --gray-400: #98A2B3;
+    --gray-500: #667085;
+    --gray-600: #475467;
+    --gray-700: #344054;
+
+    /* Text */
+    --text: #202B3C;
+    --text-muted: #667085;
+    --text-light: #98A2B3;
+
+    /* Validation Only */
+    --validation-success: #216E39;
+    --validation-success-bg: #EAF5ED;
+    --validation-error: #B42332;
+    --validation-error-bg: #FCEAEC;
+
+    /* Borders and Effects */
+    --border: #DCE2EA;
+    --border-dark: #C7CFDA;
+
+    --shadow-sm: 0 1px 2px rgba(16, 43, 80, 0.05);
+    --shadow-md: 0 4px 12px rgba(16, 43, 80, 0.08);
+
+    --transition: 0.18s ease;
+}
+
+
+/* ==================================================
+   4. GLOBAL RESET
+================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+
+    color: var(--text);
+    background-color: var(--background);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+}
+
+::selection {
+    color: var(--white);
+    background-color: var(--blue);
+}
+
+
+/* ==================================================
+   5. TYPOGRAPHY
+================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    color: var(--navy);
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+h1 {
+    font-weight: 900;
+}
+
+h2,
+h3 {
+    font-weight: 800;
+}
+
+p {
+    margin-top: 0;
+}
+
+.page-title {
+    color: var(--navy);
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.7px;
+    line-height: 1.25;
+}
+
+.section-title {
+    color: var(--navy);
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.subsection-title {
+    color: var(--navy);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.eyebrow {
+    color: var(--red);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.text-blue {
+    color: var(--blue);
+}
+
+.text-red {
+    color: var(--red);
+}
+
+
+/* ==================================================
+   6. LINKS AND HOVER EFFECTS
+================================================== */
+
+a {
+    color: var(--blue);
+    text-decoration: none;
+    transition:
+        color var(--transition),
+        background-color var(--transition);
+}
+
+a:hover {
+    color: var(--navy);
+    text-decoration: underline;
+    text-decoration-color: var(--blue);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+}
+
+
+/* ==================================================
+   7. PAGE LAYOUT
+================================================== */
+
+.page-container {
+    width: 100%;
+    max-width: 1280px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.page-section {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.page-header {
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+
+    border-bottom: 2px solid var(--navy);
+}
+
+.content-section {
+    margin-bottom: 32px;
+}
+
+.section-divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--border);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* ==================================================
+   8. BUTTONS
+================================================== */
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    color: var(--white);
+    background-color: var(--navy);
+
+    border: 1px solid var(--navy);
+    border-radius: 3px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background-color var(--transition),
+        border-color var(--transition);
+}
+
+.btn-primary:hover {
+    color: var(--white);
+    background-color: var(--blue);
+    border-color: var(--blue);
+
+    text-decoration: none;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    color: var(--navy);
+    background-color: var(--white);
+
+    border: 1px solid var(--border-dark);
+    border-radius: 3px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background-color var(--transition),
+        border-color var(--transition);
+}
+
+.btn-secondary:hover {
+    color: var(--navy);
+    background-color: var(--blue-light);
+    border-color: var(--blue);
+
+    text-decoration: none;
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 9px 16px;
+
+    color: var(--blue);
+    background-color: transparent;
+
+    border: 1px solid var(--blue);
+    border-radius: 3px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background-color var(--transition),
+        color var(--transition);
+}
+
+.btn-outline:hover {
+    color: var(--navy);
+    background-color: var(--blue-light);
+
+    text-decoration: none;
+}
+
+.btn-danger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    color: var(--white);
+    background-color: var(--red);
+
+    border: 1px solid var(--red);
+    border-radius: 3px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: background-color var(--transition);
+}
+
+.btn-danger:hover {
+    color: var(--white);
+    background-color: var(--red-dark);
+    border-color: var(--red-dark);
+
+    text-decoration: none;
+}
+
+.btn-primary:disabled,
+.btn-secondary:disabled,
+.btn-danger:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+/* ==================================================
+   9. FORMS
+================================================== */
+
+.form-label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: var(--navy);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    min-height: 42px;
+
+    padding: 10px 12px;
+
+    color: var(--text);
+    background-color: var(--white);
+
+    border: 1px solid var(--border-dark);
+    border-radius: 3px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--blue);
+
+    box-shadow: 0 0 0 3px rgba(36, 89, 166, 0.10);
+}
+
+.form-control::placeholder {
+    color: var(--gray-400);
+    font-weight: 500;
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+select.form-control {
+    cursor: pointer;
+}
+
+.form-help {
+    display: block;
+    margin-top: 5px;
+
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+
+/* ==================================================
+   10. VALIDATION FEEDBACK
+   Green is exclusively for validation success.
+================================================== */
+
+.field-error {
+    display: block;
+    margin-top: 5px;
+
+    color: var(--validation-error);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.field-success {
+    display: block;
+    margin-top: 5px;
+
+    color: var(--validation-success);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.form-control.is-invalid {
+    border-color: var(--validation-error);
+}
+
+.form-control.is-valid {
+    border-color: var(--validation-success);
+}
+
+.alert-error {
+    padding: 12px 16px;
+
+    color: var(--validation-error);
+    background-color: var(--validation-error-bg);
+
+    border-left: 4px solid var(--validation-error);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.alert-success {
+    padding: 12px 16px;
+
+    color: var(--validation-success);
+    background-color: var(--validation-success-bg);
+
+    border-left: 4px solid var(--validation-success);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* ==================================================
+   11. RECORD CONTAINERS
+================================================== */
+
+.record-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+}
+
+.record-card-header {
+    padding: 16px 20px;
+
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.record-card-body {
+    padding: 20px;
+}
+
+.record-card-footer {
+    padding: 14px 20px;
+
+    background-color: var(--surface-alt);
+    border-top: 1px solid var(--border);
+}
+
+
+/* ==================================================
+   12. RECORD TABLES
+================================================== */
+
+.record-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    background-color: var(--white);
+}
+
+.record-table thead th {
+    padding: 13px 16px;
+
+    color: var(--navy);
+    background-color: var(--gray-100);
+
+    border-bottom: 2px solid var(--navy);
+
+    font-size: 12px;
+    font-weight: 800;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.record-table tbody td {
+    padding: 14px 16px;
+
+    color: var(--text);
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    vertical-align: middle;
+}
+
+.record-table tbody tr {
+    transition: background-color var(--transition);
+}
+
+.record-table tbody tr:hover {
+    background-color: var(--blue-light);
+}
+
+.record-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.record-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+/* ==================================================
+   13. STATUS LABELS
+================================================== */
+
+.badge-blue {
+    display: inline-block;
+
+    padding: 4px 9px;
+
+    color: var(--navy);
+    background-color: var(--blue-light);
+
+    border: 1px solid var(--blue-border);
+    border-radius: 3px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.badge-red {
+    display: inline-block;
+
+    padding: 4px 9px;
+
+    color: var(--red);
+    background-color: var(--red-light);
+
+    border: 1px solid var(--red-border);
+    border-radius: 3px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   14. DASHBOARD STATISTICS
+================================================== */
+
+.stat-card {
+    padding: 20px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--blue);
+
+    border-radius: 3px;
+}
+
+.stat-card-red {
+    border-top-color: var(--red);
+}
+
+.stat-label {
+    color: var(--text-muted);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.stat-value {
+    margin-top: 8px;
+
+    color: var(--navy);
+
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+
+/* ==================================================
+   15. NAVIGATION
+================================================== */
+
+.main-navigation {
+    color: var(--white);
+    background-color: var(--navy-dark);
+
+    border-bottom: 3px solid var(--red);
+}
+
+.main-navigation a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.main-navigation a:hover {
+    color: var(--white);
+    background-color: var(--navy-light);
+    text-decoration: none;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 12px 14px;
+
+    color: var(--white);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    border-bottom: 3px solid transparent;
+
+    transition:
+        background-color var(--transition),
+        border-color var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--white);
+    background-color: var(--navy-light);
+    border-bottom-color: var(--red);
+
+    text-decoration: none;
+}
+
+
+/* ==================================================
+   16. SEARCH
+================================================== */
+
+.search-container {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+.search-container .form-control {
+    flex: 1;
+    min-width: 0;
+}
+
+.search-button {
+    padding: 10px 20px;
+
+    color: var(--white);
+    background-color: var(--navy);
+
+    border: 1px solid var(--navy);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: background-color var(--transition);
+}
+
+.search-button:hover {
+    color: var(--white);
+    background-color: var(--blue);
+}
+
+
+/* ==================================================
+   17. MODALS
+================================================== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background-color: rgba(10, 29, 56, 0.60);
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 24px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--red);
+    border-radius: 3px;
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* ==================================================
+   18. PAGINATION
+================================================== */
+
+.pagination a,
+.pagination span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 34px;
+    min-height: 34px;
+
+    padding: 6px 10px;
+
+    border: 1px solid var(--border);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.pagination a {
+    color: var(--navy);
+    background-color: var(--white);
+}
+
+.pagination a:hover {
+    color: var(--navy);
+    background-color: var(--blue-light);
+    border-color: var(--blue);
+
+    text-decoration: none;
+}
+
+.pagination .active {
+    color: var(--white);
+    background-color: var(--navy);
+    border-color: var(--navy);
+}
+
+
+/* ==================================================
+   19. FOOTER
+================================================== */
+
+.site-footer {
+    color: var(--white);
+    background-color: var(--navy-dark);
+
+    border-top: 3px solid var(--red);
+}
+
+.site-footer p {
+    color: #DCE5F1;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ==================================================
+   20. RESPONSIVE DESIGN
+================================================== */
+
+@media (max-width: 768px) {
+
+    .page-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .page-title {
+        font-size: 23px;
+    }
+
+    .page-section {
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+
+    .record-table {
+        min-width: 650px;
+    }
+
+    .stat-value {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    body {
+        font-size: 13px;
+    }
+
+    .page-title {
+        font-size: 21px;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-danger {
+        padding: 9px 13px;
+        font-size: 12px;
+    }
+
+    .record-card-body {
+        padding: 14px;
+    }
+}
+
+/* ==================================================
+   DASHBOARD ACTION BUTTONS
+================================================== */
+
+/* ==================================================
+   DASHBOARD ACTION BUTTONS
+================================================== */
+
+a.dashboard-action-link,
+a.dashboard-action-link:link,
+a.dashboard-action-link:visited {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+
+    font-weight: 700 !important;
+}
+
+a.dashboard-action-link:hover,
+a.dashboard-action-link:focus {
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+}
+
+a.dashboard-action-blue {
+    background-color: #102B50 !important;
+    border: 1px solid #102B50 !important;
+}
+
+a.dashboard-action-blue:hover {
+    background-color: #2459A6 !important;
+    border-color: #2459A6 !important;
+}
+
+a.dashboard-action-red {
+    background-color: #B42332 !important;
+    border: 1px solid #B42332 !important;
+}
+
+a.dashboard-action-red:hover {
+    background-color: #921C29 !important;
+    border-color: #921C29 !important;
+}
