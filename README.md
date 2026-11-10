@@ -309,7 +309,7 @@ This application was developed as part of the Computer Programmer I Practical Pr
 The system aims to provide a simple, organized, and accessible platform for managing and viewing provincial legislative records.
 
 **Developed by:**  
-[Your Full Name]
+EDRIENE JAY O. CABANELA
 
 **Provincial Legislative Records System**  
 Provincial Government of La Union
